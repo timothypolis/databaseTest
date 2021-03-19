@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OC Handler</title>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- STYLE -->
+    <link rel="stylesheet" href="/styles/style.css">
+    <!-- SCRIPTS -->
+    <script src="/scripts/script.js" defer></script>
+</head>
+<body class="font-arial">
+    <div id="nav" class="container">
+        <section onclick="selectCharacter('Biobdaris')" class="padded-left"><span>Biobdaris</span></section>
+        <section><span>CHARACTERS</span></section>
+        <section><span>TEST3</span></section>
+        <section class="padded-right"><span>TEST4</span></section>
+    </div>
+    <div id="content" class="container">
+        <section id="character" class="container-flex-row container-character">
+            <section id="semantic" class="container-flex-column">
+                <section id="character-name" class="character-semantics"><span><%=character.characterName%></span></section>
+                <section><span></span></section>
+                <section><span>TEST AGAIN</span></section>
+            </section>
+            <section id="stats" class="container-flex-column">
+                <section class="character-stat-labels"><span>Intelligence</span></section>
+                <section><span>Strength</span></section>
+                <section><span>Speed</span></section>
+                <section><span>Durability</span></section>
+                <section><span>Energy Projection</span></section>
+                <section><span>Fighting Ability</span></section>
+            </section>
+        </section>
+    </div>
+</body>
+</html>
