@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const characterSchema = new mongoose.Schema(
     {
         characterName:{type:String},
-        characterStats:[{stat: {type: String}, status:[{type:Number}]}],
+        characterStatuses:[{statusNames:[{type:String}]},{statusColor:[{colorFont:{type:String}},{colorBG:{type:String}}]}],
+        characterStats:[{stat:{type:String},statValue:[{type:Number}]}],
     },
     {timestamps: true}
 )
