@@ -11,6 +11,10 @@ const selectCharacter = function(name) {
     document.getElementById("character-name").innerHTML = name;
 }
 
+const semanticColorInjector = function(color) {
+    
+}
+
 $('#nav section').addClass(['black-element','round-element','transition-time'])
 $('.character-semantics ~ section').addClass('character-semantics')
 $('.character-semantics').addClass('white-element')

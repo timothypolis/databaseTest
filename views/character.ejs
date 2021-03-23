@@ -23,8 +23,8 @@
         <section id="character" class="container-flex-row container-character">
             <section id="semantic" class="container-flex-column">
                 <section id="character-name" class="character-semantics"><span><%=character.characterName%></span></section>
-                <section><span></span></section>
-                <section><span>TEST AGAIN</span></section>
+                <section><span id="semantic-1"><%=character.characterStatuses[0].statusName[0]%></span></section>
+                <section><span><%=character.characterStatuses[0].statusColor%></span></section>
             </section>
             <section id="stats" class="container-flex-column">
                 <section class="character-stat-labels"><span>Intelligence</span></section>
@@ -33,6 +33,16 @@
                 <section><span>Durability</span></section>
                 <section><span>Energy Projection</span></section>
                 <section><span>Fighting Ability</span></section>
+            </section>
+            <section id="stat-bars" class="container-flex-column">
+                <section>
+                    <span>
+                        <form action="<%=character.id%>/stat/0" method="POST">
+                            <input type="number" name="statValue" value="<%=character.characterStats[0].statValue[0]%>">
+                            <input type="submit" value="Submit!">
+                        </form>
+                    </span>
+                </section>
             </section>
         </section>
     </div>
