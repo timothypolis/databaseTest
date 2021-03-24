@@ -23,13 +23,13 @@
         <section id="character" class="container-flex-row container-character">
             <section id="semantic" class="container-flex-column">
                 <section id="character-name" class="character-semantics"><span><%=character.characterName%></span></section>
-                <section><span id="semantic-1"><%=character.characterStatuses[0].statusName[0]%></span></section>
-                <section><span><%=character.characterStatuses[0].statusColor%></span></section>
+                <section><span id="semantic-1"><%=character.characterStatuses[0].statusName[0]%></span></section>   <!-- Returns the proper value -->
+                <section><span></span></section>      <!-- Returns an error saying the 1st value of statusColor is undefined -->
             </section>
             <section id="stats" class="container-flex-column">
                 <section class="character-stat-labels"><span>Intelligence</span></section>
-                <section><span>Strength</span></section>
-                <section><span>Speed</span></section>
+                <section><span>Strength</span></section>                                        <%let characterStatuses = character.characterStatuses%>
+                <section><span>Speed</span></section>                                           <%console.log(characterStatuses[0].statusColor)%>
                 <section><span>Durability</span></section>
                 <section><span>Energy Projection</span></section>
                 <section><span>Fighting Ability</span></section>
