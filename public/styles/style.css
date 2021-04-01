@@ -18,7 +18,10 @@ body {
 }
     /* #endregion */
     /* #region ---CONTAINER--- */
-.container { background-color: brown;}
+.container {
+    background-color: brown;
+    overflow: auto;
+}
 .container-flex { display: flex; }
 .container-flex-row {
     display: flex;
@@ -68,6 +71,9 @@ body {
     background-color: gray;
     color: white;
 }
+.dark-gray-element {
+    background-color: #606060;
+}
         /* #endregion */
     /* #endregion */
     /* #region --- CHARACTER --- */
@@ -116,6 +122,25 @@ body {
 
 } */
     /* #endregion */
+    /* #region --- STATBAR --- */
+.stat-bar {
+    /* padding: 0.25em; */
+    border-top: solid 0.15em black;
+    border-right: solid 0.15em black;
+}
+.stat-bar section {
+    padding: 0.25em;
+}
+.stat-bar:last-child {
+    border-bottom: solid 0.15em black;
+}
+.stat-bar span {
+    /* padding: 0.25em; */
+    font-size: large;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+    /* #endregion */
 /* #endregion */
 
 /* #region ----- ----- IDS ----- ----- ----- */
@@ -133,12 +158,19 @@ body {
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
+    margin-right: 5px;
     height: 80%;
     width: auto;
     padding: 0.5em;
     text-align: center;
     cursor: pointer;
     user-select: none;
+}
+#nav section:first-child {
+    margin-left: 5px;
+}
+#nav section:last-child {
+    margin-right: 5px;
 }
         /* #region -ocstuff- */
 #nav #ocstuff span:after {
@@ -172,10 +204,28 @@ body {
 
 }
                 /* #endregion */
+        /* #region -BACK- */
+#nav .back:first-child {
+    font-size: large;
+    width: 2.25em;
+}
+#nav .back span {
+    margin-left: auto;
+    margin-right: auto;
+}
+#nav .back:hover {
+    color: red;
+}
+        /* #endregion */
 #nav span {
     align-self: center;
 }
 /* #endregion */
-    /* #region--- CHARACTER --- */
+    /* #region --- CHARACTER --- */
+    /* #endregion */
+    /* #region --- STAT-BARS --- */
+#stat-bars {
+    min-width: 12.25em;
+}
     /* #endregion */
 /* #endregion */

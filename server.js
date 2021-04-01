@@ -12,6 +12,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 
 app.use("/character", ctrl.character);
+app.use("/wtnc", ctrl.wtnc);
 app.get("/", async function(req,res){
     res.render("main");
 })

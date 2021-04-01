@@ -11,40 +11,54 @@
     <link rel="stylesheet" href="/styles/style.css">
     <!-- SCRIPTS -->
     <script src="/scripts/script.js" defer></script>
+    <script src="/scripts/OCscript.js" defer></script>
 </head>
 <body class="font-arial">
     <div id="nav" class="container">
-        <section onclick="selectCharacter('Biobdaris')" class="padded-left"><span>Biobdaris</span></section>
+        <section class="back" onclick="changeURL(`/`)"><span>&#9664;</span></section>
         <section><span>CHARACTERS</span></section>
-        <section><span>TEST3</span></section>
-        <section class="padded-right"><span>TEST4</span></section>
+        <section onclick="badLogger()"><span>DEBUG</span></section>
+        <section><span>TEST4</span></section>
+        <section><span>TEST5</span></section>
+        <section><span>TEST6</span></section>
     </div>
     <div id="content" class="container">
         <section id="character" class="container-flex-row container-character">
             <section id="semantic" class="container-flex-column">
                 <section id="character-name" class="character-semantics"><span><%=character.characterName%></span></section>
-                <section><span id="semantic-1"><%=character.characterStatuses[0].statusName[0]%></span></section>   <!-- Returns the proper value -->
-                <section><span></span></section>      <!-- Returns an error saying the 1st value of statusColor is undefined -->
+                <section><span id="semantic-1" style="color: <%=character.characterStatuses[1].statusColor.colorFont%>"><%=character.characterStatuses[1].statusName%></span></section>
+                <section><span><%=character.characterStatuses[1].statusColor.colorFont%></span></section>
             </section>
             <section id="stats" class="container-flex-column">
                 <section class="character-stat-labels"><span>Intelligence</span></section>
-                <section><span>Strength</span></section>                                        <%let characterStatuses = character.characterStatuses%>
-                <section><span>Speed</span></section>                                           <%console.log(characterStatuses[0].statusColor)%>
+                <section><span>Strength</span></section>
+                <section><span>Speed</span></section>
                 <section><span>Durability</span></section>
                 <section><span>Energy Projection</span></section>
                 <section><span>Fighting Ability</span></section>
             </section>
             <section id="stat-bars" class="container-flex-column">
-                <section>
-                    <span>
-                        <form action="<%=character.id%>/stat/0" method="POST">
-                            <input type="number" name="statValue" value="<%=character.characterStats[0].statValue[0]%>">
-                            <input type="submit" value="Submit!">
-                        </form>
-                    </span>
+                <% for (let i = 0; i < character.characterStats.length; i++) { %>
+                <section class="stat-bar container-flex-row">
+                    <% for (let j = 0; j < character.characterStats[i].statValue.length; j++) { %>
+                        <section id="test" style="background-color: <%=character.characterStatuses[j].statusColor.colorBG%>"><span style="color: <%=character.characterStatuses[j].statusColor.colorFont%>;"><%=character.characterStats[i].statValue[j]%></span></section>
+                    <% } %>
                 </section>
+                <% } %>
+                        
             </section>
         </section>
+        <form class="padded-left" action="<%=character.id%>/stat/0" method="POST">
+            <input type="number" name="statValue" value="<%=character.characterStats[0].statValue[0]%>">
+            <input type="submit" value="Submit!">
+        </form>
     </div>
+
+    
+
+    <!-- #region BOBBY SCRIPT -->
+    <%console.log(character.characterName);%>
+    <!-- #endregion -->
+
 </body>
 </html>
